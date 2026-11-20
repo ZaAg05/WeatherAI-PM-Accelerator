@@ -1,0 +1,164 @@
+/* --- RESET & BASE --- */
+body {
+  margin: 0;
+  padding: 0;
+  /* Un beau dégradé moderne style ciel de nuit / crépuscule */
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* --- EFFET GLASSMORPHISM (Cartes en verre) --- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* --- HEADER --- */
+.header {
+  text-align: center;
+  padding: 20px;
+}
+.header h1 {
+  margin: 0 0 5px 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #74ebd5, #9face6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.header p { margin: 0; color: #a0aec0; font-size: 0.95rem; }
+
+/* --- SEARCH SECTION --- */
+.search-section h2 { margin-top: 0; font-size: 1.3rem; font-weight: 500; }
+.search-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  outline: none;
+  transition: all 0.3s ease;
+}
+input::placeholder { color: #a0aec0; }
+input:focus { border-color: #74ebd5; box-shadow: 0 0 10px rgba(116, 235, 213, 0.2); }
+
+button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  color: #1a202c;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(116, 235, 213, 0.4); }
+
+.error-message {
+  margin-top: 15px;
+  color: #ff8a8a;
+  background: rgba(255, 138, 138, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 138, 138, 0.3);
+}
+
+/* --- WEATHER WIDGET --- */
+.weather-card {
+  text-align: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Dégradé spécifique pour la carte météo */
+}
+.weather-card h2 { margin: 0 0 10px 0; font-size: 1.5rem; font-weight: 400; opacity: 0.9; }
+.temp { font-size: 5rem; font-weight: 800; display: block; line-height: 1; margin: 10px 0; }
+.desc { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: #74ebd5; }
+
+/* --- HISTORY (CRUD) --- */
+.history-section h2 { margin-top: 0; font-size: 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;}
+.history-list { list-style: none; padding: 0; margin: 0; }
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.history-item:last-child { border-bottom: none; }
+.history-item-info strong { color: #74ebd5; font-size: 1.1rem;}
+.history-item-info span { color: #cbd5e0; }
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #fc8181;
+  color: #fc8181;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+.delete-btn:hover { background: #fc8181; color: #1a202c; }
+
+/* --- FOOTER --- */
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+.footer h3 { color: #e2e8f0; font-size: 1rem; margin-bottom: 5px;}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .search-form { flex-direction: column; }
+  .temp { font-size: 4rem; }
+}
+
+/* --- BOUTON GPS ET ICÔNE MÉTÉO --- */
+.gps-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  color: #a0aec0;
+  font-weight: bold;
+}
+
+.gps-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 100%;
+}
+.gps-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.weather-icon {
+  width: 150px;
+  height: 150px;
+  margin: -20px auto;
+  display: block;
+  filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
+}
